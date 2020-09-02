@@ -1,6 +1,6 @@
 ### react-use-zoom
 
-Nearly native image scaling (:iphone:/:computer:), rich in functionality. It is extremely easy to use. It's built on the comparison, like smartphone galleries. It doesn't seem slow, but it doesn't seem fast either. to be honest, I didn't measure performance. This will also boost your mobile app and website user experience.
+Nearly native image scaling (:iphone:/:computer:), rich in functionality. It is extremely easy to use. it's built by comparing scaling features existing in 'Gallery' apps for smartphones. It doesn't seem slow, but it doesn't seem ridiculously fast either, to be honest, I didn't measure performance. This will also boost your mobile app and website user experience.
 
 <p>
   <a href="https://www.npmjs.com/package/svelte-zoom"><img  src="https://img.shields.io/npm/v/svelte-zoom?style=for-the-badge"/></a>
@@ -17,7 +17,7 @@ Nearly native image scaling (:iphone:/:computer:), rich in functionality. It is 
 
 ###### Note
 
-> The image must be full width and full height
+> The image must take up the entire width and height of the page
 
 ### Features
 
@@ -52,11 +52,7 @@ npm i svelte-zoom
 ### Usage
 
 ```svelte
-<Zoom src="..." alt="..." />
-
-<script>
-
-</script>
+<Zoom src="URL" alt="..." />
 
 ```
 
@@ -64,7 +60,7 @@ npm i svelte-zoom
 
 If for some reason you want to zoom in by calling the function manually. You can use the `zoomIn` and `zoomOut` functions. It will scale in the center of the image.
 
-```markdown
+```svelte
 <script>
 import Zoom from 'svelte-zoom'
 
