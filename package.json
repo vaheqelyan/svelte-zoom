@@ -1,0 +1,40 @@
+{
+  "name": "svelte-zoom",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "lint": "eslint . --ignore-path .gitignore",
+    "pretty": "prettier --config .prettierrc --write --svelte-sort-order styles-markup-scripts \"rollup.config.js\" \"src/*.svelte\" \"src/*.js\" \"package.json\" \"*.md\" ",
+    "go": "npm-run-all pretty lint build",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaheqelyan/svelte-zoom.git"
+  },
+  "author": "Vahe Araqelyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vaheqelyan/svelte-zoom/issues"
+  },
+  "homepage": "https://github.com/vaheqelyan/svelte-zoom#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "eslint": "^7.8.1",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.1.1",
+    "prettier-plugin-svelte": "^1.2.0",
+    "rollup": "^2.26.9",
+    "rollup-plugin-svelte": "^6.0.0",
+    "svelte": "^3.24.1"
+  },
+  "files": [
+    "src",
+    "dist"
+  ]
+}
