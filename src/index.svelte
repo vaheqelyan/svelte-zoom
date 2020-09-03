@@ -230,7 +230,7 @@
     }
 
     scale.max = Math.max(naturalWidth / window.innerWidth, 1)
-    ratio = calculateAspectRatioFit(img.naturalWidth, img.naturalHeight, window.innerWidth, window.innerHeight)
+    ratio = calculateAspectRatioFit(naturalWidth, naturalHeight, window.innerWidth, window.innerHeight)
   }
 
   onMount(() => {
