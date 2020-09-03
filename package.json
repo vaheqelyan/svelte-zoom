@@ -1,7 +1,7 @@
 {
   "name": "svelte-zoom",
   "version": "0.1.1",
-  "description": "",
+  "description": "Nearly native image scaling in web (mobile/desktop), rich in functionality. This will make your mobile users happy",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "scripts": {
@@ -21,6 +21,18 @@
   "bugs": {
     "url": "https://github.com/vaheqelyan/svelte-zoom/issues"
   },
+  "keywords": [
+    "svelte",
+    "hook",
+    "zoom",
+    "pinch",
+    "pan",
+    "touch",
+    "mobile",
+    "desktop",
+    "browser",
+    "mouse"
+  ],
   "homepage": "https://github.com/vaheqelyan/svelte-zoom#readme",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
