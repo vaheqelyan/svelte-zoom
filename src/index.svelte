@@ -40,6 +40,8 @@
 
   import { calculateAspectRatioFit, getDistance, isTouchDevice } from "./other"
 
+  import { onMount } from "svelte"
+
   const transitionClassName = "c-svelteZoom--transition"
 
   let xY = {
