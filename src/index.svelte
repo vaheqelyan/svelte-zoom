@@ -267,7 +267,7 @@
   }
 
   function onTouchMove(e) {
-    if (scale.current.scaling) {
+    if (scale.scaling) {
       const [touchA, touchB] = e.touches
       fireScaleMove(touchA, touchB)
     } else {
