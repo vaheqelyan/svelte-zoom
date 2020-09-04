@@ -3,7 +3,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    transform-origin: 0;
+    transform-origin: 0 0;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
