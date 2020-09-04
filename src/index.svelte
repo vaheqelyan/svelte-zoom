@@ -9,7 +9,12 @@
     -moz-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
     will-change: transform;
+    touch-action: none;
   }
 
   .c-svelteZoom--contain {
