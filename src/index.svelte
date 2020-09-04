@@ -54,7 +54,7 @@
 
   let ratio, contain, img
 
-  let matrix = new Matrix()
+  let matrix
 
   let velocity = new MultiTouchVelocity()
 
@@ -235,6 +235,7 @@
   }
 
   onMount(() => {
+    matrix = new Matrix()
     window.addEventListener("wheel", onWheel, { passive: false })
     window.addEventListener("resize", onResize)
   })
