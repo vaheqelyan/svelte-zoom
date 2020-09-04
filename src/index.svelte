@@ -32,6 +32,7 @@
   bind:this={img}
   on:mousedown={mousedown}
   on:touchstart={touchstart}
+  on:load={onLoad}
   {...$$props} />
 
 <script>
