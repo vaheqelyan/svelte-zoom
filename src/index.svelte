@@ -31,6 +31,7 @@
 </style>
 
 <img
+  {alt}
   class="c-svelteZoom"
   class:c-svelteZoom--contain={contain}
   class:c-svelteZoom--no-contain={!contain}
@@ -41,6 +42,7 @@
   {...$$props} />
 
 <script>
+  export let alt
   import Matrix from "./matrix"
   import MultiTouchVelocity from "./velocity"
 
