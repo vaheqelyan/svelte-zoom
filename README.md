@@ -2,6 +2,12 @@
 
 Nearly native image scaling (:iphone:/:computer:), rich in functionality. It is extremely easy to use. it's built by comparing scaling features existing in 'Gallery' apps for smartphones. It doesn't seem slow, but it doesn't seem ridiculously fast either, to be honest, I didn't measure performance. This will also boost your mobile app and website user experience.
 
+[Preview](https://svelte.dev/repl/1b2917a84eca46868fee174dd8a81218?version=3.24.1)
+
+<p align="center">
+  <img width="257" src="https://res.cloudinary.com/dxv8p5zck/image/upload/v1599324008/zoom-software.gif"/>
+</p>
+
 <p>
   <a href="https://www.npmjs.com/package/svelte-zoom"><img  src="https://img.shields.io/npm/v/svelte-zoom?style=for-the-badge"/></a>
 
