@@ -25,7 +25,7 @@
     object-fit: contain;
   }
 
-  :global(.c-svelteZoom--transition) {
+  .c-svelteZoom--transition {
     transition: transform 0.2s;
   }
 </style>
@@ -35,6 +35,7 @@
   class="c-svelteZoom"
   class:c-svelteZoom--contain={contain}
   class:c-svelteZoom--no-contain={!contain}
+  class:c-svelteZoom--transition={smooth}
   bind:this={img}
   on:mousedown={mousedown}
   on:touchstart={touchstart}
@@ -50,7 +51,7 @@
 
   import { onMount } from "svelte"
 
-  const transitionClassName = "c-svelteZoom--transition"
+  let smooth = true
 
   let xY = {
     initX: 0,
@@ -91,6 +92,8 @@
 
     matrix.x = matrix.vtm.e
     matrix.y = matrix.vtm.f
+
+    smooth = false
   }
 
   function fireMove(x, y) {
@@ -127,6 +130,7 @@
     scale.originX = centerX
     scale.originY = centerY
     scale.lastHypo = Math.trunc(getDistance(touchA, touchB))
+    smooth = false
   }
 
   function fireTapScale(x, y) {
@@ -253,7 +257,7 @@
 
     scale.scaling = isMultiTouch
 
-    img.classList.remove(transitionClassName)
+    smooth = false
     if (isMultiTouch) {
       fireScale(touchA, touchB)
 
@@ -261,7 +265,7 @@
     } else {
       var now = new Date().getTime()
       if (now - lastTap.time < 250 && Math.abs(lastTap.x - touchA.pageX) <= 20) {
-        img.classList.add(transitionClassName)
+        smooth = true
         fireTapScale(touchA.pageX, touchA.pageY)
       }
 
