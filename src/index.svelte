@@ -47,11 +47,12 @@
   import Matrix from "./matrix"
   import MultiTouchVelocity from "./velocity"
 
-  import { calculateAspectRatioFit, getDistance, isTouchDevice } from "./other"
+  import { calculateAspectRatioFit, getDistance } from "./other"
 
   import { onMount } from "svelte"
 
   let smooth = true
+  let touchScreen = false
 
   let xY = {
     initX: 0,
@@ -251,6 +252,7 @@
   })
 
   function onTouchStart(e) {
+    touchScreen = true
     const isMultiTouch = e.touches.length === 2
     const [touchA, touchB] = e.touches
 
@@ -297,6 +299,7 @@
   }
 
   function onMouseDown({ clientX, clientY }) {
+    if (touchScreen) return
     fireDown(clientX, clientY)
 
     smooth = false
@@ -314,6 +317,6 @@
     fireUp()
   }
 
-  const mousedown = isTouchDevice ? onMouseDown : null
-  const touchstart = isTouchDevice ? onTouchStart : null
+  const mousedown = onMouseDown
+  const touchstart = onTouchStart
 </script>
