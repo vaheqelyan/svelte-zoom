@@ -114,6 +114,7 @@
 
     scale.scaling = false
     scale.lastHypo = 0
+    smooth = true
   }
 
   function fireScale(touchA, touchB) {
@@ -187,7 +188,7 @@
   }
 
   function fireManualZoom(dir) {
-    const xFactor = 1 + 0.1 * dir
+    const xFactor = 1 + 0.2 * dir
     const yFactor = (xFactor * window.innerHeight) / window.innerWidth
 
     let in_x = (window.innerWidth - ratio.width * matrix.vtm.a) / 2
