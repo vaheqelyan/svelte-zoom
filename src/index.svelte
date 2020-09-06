@@ -85,8 +85,6 @@
     max: 1,
   }
 
-  const isTouch = isTouchDevice()
-
   function fireDown(x, y) {
     xY.initX = x
     xY.initY = y
