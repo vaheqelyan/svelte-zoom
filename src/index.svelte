@@ -92,8 +92,6 @@
 
     matrix.x = matrix.vtm.e
     matrix.y = matrix.vtm.f
-
-    smooth = false
   }
 
   function fireMove(x, y) {
