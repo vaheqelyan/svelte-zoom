@@ -1,6 +1,6 @@
 {
   "name": "svelte-zoom",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Nearly native image scaling in web (mobile/desktop), rich in functionality. This will make your mobile users happy",
   "svelte": "src/index.svelte",
   "main": "dist/index.js",
