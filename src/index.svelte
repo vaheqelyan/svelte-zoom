@@ -257,7 +257,7 @@
     if (isMultiTouch) {
       fireScale(touchA, touchB)
 
-      _velocity.down(touchA, touchB)
+      velocity.down(touchA, touchB)
     } else {
       var now = new Date().getTime()
       if (now - lastTap.time < 250 && Math.abs(lastTap.x - touchA.pageX) <= 20) {
