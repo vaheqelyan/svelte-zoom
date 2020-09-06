@@ -28,6 +28,14 @@
   .c-svelteZoom--transition {
     transition: transform 0.2s;
   }
+
+  .c-svelteZoom--visible {
+    visibility: visible;
+  }
+
+  .c-svelteZoom--hidden {
+    visibility: hidden;
+  }
 </style>
 
 <img
@@ -36,6 +44,8 @@
   class:c-svelteZoom--contain={contain}
   class:c-svelteZoom--no-contain={!contain}
   class:c-svelteZoom--transition={smooth}
+  class:c-svelteZoom--visible={contain}
+  class:c-svelteZoom--hidden={contain === null}
   bind:this={img}
   on:mousedown={mousedown}
   on:touchstart={touchstart}
@@ -61,9 +71,10 @@
     newY: 0,
   }
 
-  let ratio, contain, img
+  let ratio, img
 
   let matrix
+  let contain = null
 
   let velocity = new MultiTouchVelocity()
 
@@ -235,9 +246,9 @@
   function onLoad() {
     const { naturalWidth, naturalHeight } = img
 
-    if (naturalWidth > window.innerWidth || naturalHeight > window.innerHeight) {
-      contain = true
-    }
+    contain = naturalWidth > window.innerWidth || naturalHeight > window.innerHeight
+
+    visible = contain
 
     scale.max = Math.max(naturalWidth / window.innerWidth, 1)
     ratio = calculateAspectRatioFit(naturalWidth, naturalHeight, window.innerWidth, window.innerHeight)
