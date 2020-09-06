@@ -299,6 +299,8 @@
   function onMouseDown({ clientX, clientY }) {
     fireDown(clientX, clientY)
 
+    smooth = false
+
     window.addEventListener("mousemove", onMouseMove)
     window.addEventListener("mouseup", onMouseUp)
   }
