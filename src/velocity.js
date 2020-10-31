@@ -4,11 +4,13 @@ export default class MultiTouchVelocity {
       clientX: 0,
       clientY: 0,
       t: 0,
+      velocity: 1,
     }
     this.touchB = {
       clientX: 0,
       clientY: 0,
       t: 0,
+      velocity: 1,
     }
   }
   down(touchA, touchB) {
