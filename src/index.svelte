@@ -81,6 +81,7 @@
   let lastTap = {
     time: 0,
     x: 0,
+    y: 0,
   }
 
   let scale = {
@@ -271,16 +272,20 @@
 
       velocity.down(touchA, touchB)
     } else {
+      const { pageX, pageY } = touchA
       var now = new Date().getTime()
-      if (now - lastTap.time < 250 && Math.abs(lastTap.x - touchA.pageX) <= 20) {
+      if (now - lastTap.time < 250 && Math.hypot(lastTap.current.x - pageX, lastTap.current.y - pageY) <= 20) {
         smooth = true
-        fireTapScale(touchA.pageX, touchA.pageY)
+        fireTapScale(pageX, pageY)
+      } else {
+        fireDown(pageX, pageY)
       }
 
-      lastTap.time = new Date().getTime()
-      lastTap.x = touchA.pageX
-
-      fireDown(touchA.pageX, touchA.pageY)
+      lastTap = {
+        time: now,
+        x: pageX,
+        y: pageY,
+      }
     }
 
     window.removeEventListener("touchmove", onTouchMove)
