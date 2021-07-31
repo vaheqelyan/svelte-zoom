@@ -257,6 +257,10 @@
     matrix = new Matrix()
     window.addEventListener("wheel", onWheel, { passive: false })
     window.addEventListener("resize", onResize)
+    return () => {
+      window.removeEventListener("wheel", onWheel)
+      window.removeEventListener("resize", onResize)      
+    }
   })
 
   function onTouchStart(e) {
