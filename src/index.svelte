@@ -249,7 +249,7 @@
 
     contain = naturalWidth > window.innerWidth || naturalHeight > window.innerHeight
 
-    scale.max = Math.max(naturalWidth / window.innerWidth, 1)
+    scale.max = naturalWidth > naturalHeight ? Math.max(naturalWidth / window.innerWidth, 1) : Math.max(naturalHeight / window.innerHeight, 1)
     ratio = calculateAspectRatioFit(naturalWidth, naturalHeight, window.innerWidth, window.innerHeight)
   }
 
