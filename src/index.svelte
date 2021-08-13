@@ -273,6 +273,7 @@
 
   function onTouchStart(e) {
     touchScreen = true
+    willChange = true
     const isMultiTouch = e.touches.length === 2
     const [touchA, touchB] = e.touches
 
