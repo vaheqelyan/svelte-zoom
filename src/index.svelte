@@ -278,7 +278,7 @@
     } else {
       const { pageX, pageY } = touchA
       var now = new Date().getTime()
-      if (now - lastTap.time < 250 && Math.hypot(lastTap.current.x - pageX, lastTap.current.y - pageY) <= 20) {
+      if (now - lastTap.time < 250 && Math.hypot(lastTap.x - pageX, lastTap.y - pageY) <= 20) {
         smooth = true
         fireTapScale(pageX, pageY)
       } else {
