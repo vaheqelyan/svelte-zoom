@@ -265,6 +265,7 @@
 
   function onTouchStart(e) {
     touchScreen = true
+    const isSingleTouch = e.touches.length === 1
     const isMultiTouch = e.touches.length === 2
     const [touchA, touchB] = e.touches
 
@@ -275,7 +276,7 @@
       fireScale(touchA, touchB)
 
       velocity.down(touchA, touchB)
-    } else {
+    } else if (isSingleTouch) {
       const { pageX, pageY } = touchA
       var now = new Date().getTime()
       if (now - lastTap.time < 250 && Math.hypot(lastTap.current.x - pageX, lastTap.current.y - pageY) <= 20) {
@@ -299,10 +300,13 @@
   }
 
   function onTouchMove(e) {
-    if (scale.scaling) {
+    const isSingleTouch = e.touches.length === 1
+    const isMultiTouch = e.touches.length === 2
+    
+    if (scale.scaling && isMultiTouch) {
       const [touchA, touchB] = e.touches
       fireScaleMove(touchA, touchB)
-    } else {
+    } else if (isSingleTouch) {
       fireMove(e.touches[0].pageX, e.touches[0].pageY)
     }
   }
