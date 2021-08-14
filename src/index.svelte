@@ -13,7 +13,6 @@
     -moz-user-drag: none;
     -o-user-drag: none;
     user-drag: none;
-    will-change: transform;
     touch-action: none;
   }
 
@@ -36,6 +35,10 @@
   .c-svelteZoom--hidden {
     visibility: hidden;
   }
+  
+  .c-svelteZoom--willChange{
+    will-change: transform;
+  }
 </style>
 
 <img
@@ -46,6 +49,7 @@
   class:c-svelteZoom--transition={smooth}
   class:c-svelteZoom--visible={contain}
   class:c-svelteZoom--hidden={contain === null}
+  class:c-svelteZoom--willChange={willChange}
   bind:this={img}
   on:mousedown={mousedown}
   on:touchstart={touchstart}
@@ -75,6 +79,7 @@
 
   let matrix
   let contain = null
+  let willChange = true;
 
   let velocity = new MultiTouchVelocity()
 
@@ -103,6 +108,8 @@
 
     matrix.x = matrix.vtm.e
     matrix.y = matrix.vtm.f
+    
+    willChange = true;
   }
 
   function fireMove(x, y) {
@@ -124,6 +131,7 @@
     scale.scaling = false
     scale.lastHypo = 0
     smooth = true
+    willChange = false;
   }
 
   function fireScale(touchA, touchB) {
@@ -265,6 +273,7 @@
 
   function onTouchStart(e) {
     touchScreen = true
+    willChange = true
     const isMultiTouch = e.touches.length === 2
     const [touchA, touchB] = e.touches
 
