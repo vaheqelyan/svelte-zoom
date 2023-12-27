@@ -1,3 +1,5 @@
+# NOT MAINTAINED :(
+
 ### svelte-zoom
 
 Nearly native image scaling (:iphone:/:computer:), rich in functionality. It is extremely easy to use. it's built by comparing scaling features existing in 'Gallery' apps for smartphones. It doesn't seem slow, but it doesn't seem ridiculously fast either, to be honest, I didn't measure performance. This will also boost your mobile app and website user experience.
